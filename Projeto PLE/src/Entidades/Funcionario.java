@@ -15,7 +15,7 @@ public class Funcionario extends Pessoa {
 	}
 	
 	public void setCpf(String cpf) {
-		super.setCpf(cpf);;
+		super.setCpf(cpf);
 	}
 	
 	public String getNome() {
