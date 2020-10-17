@@ -1,4 +1,4 @@
-package Exceptions.Livro;
+package Exceptions.livro;
 
 public class LivroNaoEncontradoException extends Exception {
     private int id;

@@ -1,4 +1,4 @@
-package Exceptions.Livro;
+package Exceptions.livro;
 
 public class LivroNuloException extends Exception{
     private String autor;

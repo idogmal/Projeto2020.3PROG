@@ -1,4 +1,4 @@
-package Exceptions.Livro;
+package Exceptions.livro;
 
 import Entidades.Livro;
 

@@ -1,4 +1,4 @@
-package Exceptions.Livro;
+package Exceptions.livro;
 
 public class LivroJaExistenteException extends Exception {
     private int id;
