@@ -1,4 +1,4 @@
-package Exceptions.Devolucao;
+package Exceptions.devolucao;
 
 public class DevolucaoJaExistenteException extends Exception {
     private int id;

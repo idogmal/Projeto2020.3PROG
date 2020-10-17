@@ -1,4 +1,4 @@
-package Exceptions.Devolucao;
+package Exceptions.devolucao;
 
 import Entidades.Aluno;
 import Entidades.Funcionario;

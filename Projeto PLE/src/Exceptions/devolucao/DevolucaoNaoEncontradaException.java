@@ -1,4 +1,4 @@
-package Exceptions.Devolucao;
+package Exceptions.devolucao;
 
 public class DevolucaoNaoEncontradaException extends Exception{
     private int id;
