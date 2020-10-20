@@ -1,18 +1,22 @@
-
 package Entidades;
 
+import java.io.Serializable;
 
-public class Aluno extends Pessoa{
-    
-   public Aluno(){
-       
-   }
+public class Aluno extends Pessoa implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5100023855706194181L;
 
-    public Aluno(String nome, String cpf) {
-        super(nome, cpf);
-    }
-    
-        public String getCpf() {
+	public Aluno() {
+	}
+	
+	public Aluno(String nome, String cpf) {
+		super(nome,cpf);
+	}
+	
+	public String getCpf() {
 		return super.getCpf();
 	}
 	
@@ -26,7 +30,5 @@ public class Aluno extends Pessoa{
 
 	public void setNome(String nome) {
 		super.setNome(nome);
-	} 
-   
-    
+	}
 }

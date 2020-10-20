@@ -1,96 +1,93 @@
-
 package Entidades;
 
-import java.time.Instant;
+import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Arrays;
 
+import Repositorio.RepositorioDevolucoesArray;
 
+public class Devolucao implements Serializable {
 
-public class Devolucao {
-    private int id;
-    private static int contador = 0;
-    private Aluno aluno;
-    private Livro livro;
-    private Funcionario funcionario;
-    private double multa;
-    private LocalDate dataDevolucao;
+	@Override
+	public String toString() {
+		return "" + aluno.getNome() + ", " + dataDevolucao + ", " + funcionario.getNome() + ", livros:"
+				+ Arrays.toString(itens) + "]";
+	}
 
-    /**
-     *
-     * @param aluno
-     * @param livro
-     * @param funcionario
-     * @param dataDevolucao
-     */
-    public Devolucao(Aluno aluno, Livro livro,Funcionario funcionario, LocalDate dataDevolucao) {
-        
-        this.aluno = aluno;
-        this.livro = livro;
-        this.funcionario = funcionario;
-        this.dataDevolucao = LocalDate.now();
-        this.id = contador++;
-    }
+	/**
+	 * Arrays.toString(itens)
+	 * 
+	 */
+	private static final long serialVersionUID = 5897811956750760212L;
+	private int id = 0;
+	private static int contador = 0;
+	private Aluno aluno;
+	private Item[] itens;
+	private Funcionario funcionario;
+	private LocalDate dataDevolucao;
+	private float multa;
 
-    public int getId() {
-        return id;
-    }
+	public Devolucao(Aluno aluno, Item[] itens, Funcionario funcionario) {
+		Devolucao.contador = RepositorioDevolucoesArray.getInstance().listar().size() + 1;
+		this.aluno = aluno;
+		this.itens = itens;
+		this.funcionario = funcionario;
+		this.dataDevolucao = LocalDate.now();
+		this.multa = 0;
+		this.id = contador;
 
-    public void setId(int id) {
-        this.id = id;
-    }
+	}
 
-    public static int getContador() {
-        return contador;
-    }
+	public Aluno getAluno() {
+		return aluno;
+	}
 
-    public static void setContador(int contador) {
-        Devolucao.contador = contador;
-    }
+	public void setAluno(Aluno aluno) {
+		this.aluno = aluno;
+	}
 
-    public Aluno getAluno() {
-        return aluno;
-    }
+	public Item[] getItens() {
+		return itens;
+	}
 
-    public void setAluno(Aluno aluno) {
-        this.aluno = aluno;
-    }
+	public void setItens(Item[] itens) {
+		this.itens = itens;
+	}
 
-    public Livro getLivro() {
-        return livro;
-    }
+	public Funcionario getFuncionario() {
+		return funcionario;
+	}
 
-    public void setLivro(Livro livro) {
-        this.livro = livro;
-    }
+	public void setFuncionario(Funcionario funcionario) {
+		this.funcionario = funcionario;
+	}
 
-    
-    public LocalDate getDataDevolucao() {
-        return dataDevolucao;
-    }
+	public LocalDate getDataDevolucao() {
+		return dataDevolucao;
+	}
 
-    public void setDataDevolucao(LocalDate dataDevolucao) {
-        this.dataDevolucao = dataDevolucao;
-    }
+	public void setDataDevolucao(LocalDate dataDevolucao) {
+		this.dataDevolucao = dataDevolucao;
+	}
 
-    public double getMulta() {
-        return multa;
-    }
+	public int getId() {
+		return id;
+	}
 
-    public void setMulta(double multa) {
-        this.multa = multa;
-    }
+	public static int getContador() {
+		return contador;
+	}
 
-    public Funcionario getFuncionario() {
-        return funcionario;
-    }
+	public float getMulta() {
+		return multa;
+	}
 
-    public void setFuncionario(Funcionario funcionario) {
-        this.funcionario = funcionario;
-    }
-    
-    
-    
-    
-    
-    
+	public void setMulta(float multa) {
+		this.multa = multa;
+	}
+
+	public static void setContador(int i) {
+		Devolucao.contador = i;
+	}
+
 }

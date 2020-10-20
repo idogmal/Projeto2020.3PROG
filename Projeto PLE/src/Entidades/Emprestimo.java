@@ -1,99 +1,98 @@
-
 package Entidades;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Arrays;
 
+import Repositorio.RepositorioEmprestimosArray;
 
-public class Emprestimo {
-    private int id = 0;
-    private static int contador = 0;
-    private Aluno aluno;
-    private Livro livro;
-    private Funcionario funcionario;
-    private LocalDate dataEmprestimo;
-    private final LocalDate dataDevolucao;
+public class Emprestimo implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3068475570049101606L;
+	private int id = 0;
+	private static int contador = 0;
+	private Aluno aluno;
+	private Item itens[] = new Item[5];
+	private Funcionario funcionario;
+	private LocalDate dataEmprestimo;
+	private LocalDate dataDevolucao;
+	private boolean Devolvido;
+	
+	
 
+	public Emprestimo( Aluno aluno, Item[] itens, Funcionario funcionario) {
+		Emprestimo.contador = RepositorioEmprestimosArray.getInstance().listar().size()+1;
+		this.id = contador;
+		this.aluno = aluno;
+		this.itens = itens;
+		this.funcionario = funcionario;
+		this.dataEmprestimo = LocalDate.now();
+		this.dataDevolucao = dataEmprestimo.plusDays(15);
+		this.setDevolvido(false);
+	}
 
-    public Emprestimo(Aluno aluno, Livro livro, Funcionario funcionario, LocalDate dataEmprestimo, LocalDate dataDevolucao) {
-        this.aluno = aluno;
-        this.livro = livro;
-        this.funcionario = funcionario;
-        this.dataEmprestimo = LocalDate.now();
-        this.dataDevolucao = this.dataEmprestimo.plusDays(30);      
-    }
+	public Aluno getAluno() {
+		return aluno;
+	}
 
-    public int getId() {
-        return id;
-    }
+	public void setAluno(Aluno aluno) {
+		this.aluno = aluno;
+	}
 
-    public void setId(int id) {
-        this.id = id;
-    }
+	public Item[] getItens() {
+		return itens;
+	}
 
-    public static int getContador() {
-        return contador;
-    }
+	public void setItens(Item[] itens) {
+		this.itens = itens;
+	}
 
-    public static void setContador(int contador) {
-        Emprestimo.contador = contador;
-    }
+	public Funcionario getFuncionario() {
+		return funcionario;
+	}
 
-    public Aluno getAluno() {
-        return aluno;
-    }
+	public void setFuncionario(Funcionario funcionario) {
+		this.funcionario = funcionario;
+	}
 
-    public void setAluno(Aluno aluno) {
-        this.aluno = aluno;
-    }
+	public LocalDate getDataEmpretimo() {
+		return dataEmprestimo;
+	}
 
-    public Livro getLivro() {
-        return livro;
-    }
+	public void setDataEmpretimo(LocalDate dataEmprestimo) {
+		this.dataEmprestimo = dataEmprestimo;
+	}
 
-    public void setLivro(Livro livro) {
-        this.livro = livro;
-    }
+	public LocalDate getDataDevolucao() {
+		return dataDevolucao;
+	}
 
-   
+	public void setDataDevolucao(LocalDate dataDevolucao) {
+		this.dataDevolucao = dataDevolucao;
+	}
 
- 
+	public static void setContador(int i) {
+		Emprestimo.contador = i;
+	}
+	
+	public int getId() {
+		return id;
+	}
 
-    public Funcionario getFuncionario() {
-        return funcionario;
-    }
+	public boolean isDevolvido() {
+		return Devolvido;
+	}
 
-    public void setFuncionario(Funcionario funcionario) {
-        this.funcionario = funcionario;
-    }
-
-    public LocalDate getDataEmprestimo() {
-        return dataEmprestimo;
-    }
-
-    public void setDataEmprestimo(LocalDate dataEmprestimo) {
-        this.dataEmprestimo = dataEmprestimo;
-    }
-
-    public LocalDate getDataDevolucao() {
-        return dataDevolucao;
-    }
-
-   
-
-   
-
-    @Override
-    public String toString() {
-        return "Emprestimo{" + "id=" + id + ", aluno=" + aluno + ", livro=" + livro + ", funcionario=" + funcionario + ", dataEmprestimo=" + dataEmprestimo + ", dataDevolucao=" + dataDevolucao + '}';
-    }
-  
-
-    
-    
-    
-    
-    
-    
-    
+	public void setDevolvido(boolean devolvido) {
+		Devolvido = devolvido;
+	}
+	
+	@Override
+	public String toString() {
+		return aluno.getNome() + " - " + dataEmprestimo + " - " + Arrays.toString(itens)
+				+ ", " + funcionario.getNome();
+	}
 }
