@@ -117,7 +117,7 @@ public class Biblioteca extends JFrame {
 		btnListarAluno.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
-				///ListarAluno.getInstance().setVisible(true);
+				ListarAluno.getInstance().setVisible(true);
 			}
 		});
 		btnListarAluno.setBounds(0, 193, 80, 23);
@@ -181,7 +181,7 @@ public class Biblioteca extends JFrame {
 		btnListarLivro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
-				///ListarLivro.getInstance().setVisible(true);;
+				ListarLivro.getInstance().setVisible(true);;
 			}
 		});
 		btnListarLivro.setBounds(91, 193, 80, 23);
@@ -245,7 +245,7 @@ public class Biblioteca extends JFrame {
 		btnListarFuncionario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
-				///ListarFuncionario.getInstance().setVisible(true);
+				ListarFuncionario.getInstance().setVisible(true);
 			}
 		});
 		btnListarFuncionario.setBounds(182, 193, 80, 23);
@@ -298,7 +298,7 @@ public class Biblioteca extends JFrame {
 		btnListarEmprestimo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				setVisible(false);
-				///ListarEmprestimo.getInstance().setVisible(true);
+				ListarEmprestimo.getInstance().setVisible(true);
 			}
 		});
 		btnListarEmprestimo.setBounds(273, 193, 80, 23);
@@ -351,7 +351,7 @@ public class Biblioteca extends JFrame {
 		btnListarDevolucao.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
-				///ListarDevolucao.getInstance().setVisible(true);
+				ListarDevolucao.getInstance().setVisible(true);
 			}
 		});
 		btnListarDevolucao.setBounds(364, 193, 80, 23);

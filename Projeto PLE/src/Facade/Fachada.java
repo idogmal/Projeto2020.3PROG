@@ -61,7 +61,6 @@ public class Fachada {
 		return instance;
 	}
 
-	// Alunos--------------------------------------------------------------------------------------------------------------------------------------------------
 
 	public void cadastrar(Aluno aluno) throws CpfJaExisteException, AlunoNuloException {
 		alunos.cadastrar(aluno);
@@ -83,8 +82,7 @@ public class Fachada {
 		return alunos.listar();
 	}
 
-	// Devoluções----------------------------------------------------------------------------------------------------------------------------------------------
-
+	
 	public void cadastrar(Devolucao devolucao) throws DevolucaoJaExisteException, DevolucaoNulaException {
 		devolucoes.cadastrar(devolucao);
 	}
@@ -109,8 +107,7 @@ public class Fachada {
 		return devolucoes.listar();
 	}
 
-	// Emprestimos---------------------------------------------------------------------------------------------------------------------------------------------
-
+	
 	public void cadastrar(Emprestimo emprestimo) throws EmprestimoJaExisteException, EmprestimoNuloException {
 		emprestimos.cadastrar(emprestimo);
 	}
@@ -131,8 +128,7 @@ public class Fachada {
 		return emprestimos.procurarEmprestimos(cpf);
 	}
 
-	// Funcionarios--------------------------------------------------------------------------------------------------------------------------------------------
-
+	
 	public void cadastrar(Funcionario funcionario) throws CpfJaExisteException, FuncionarioNuloException {
 		funcionarios.cadastrar(funcionario);
 	}
@@ -157,8 +153,7 @@ public class Fachada {
 		return funcionarios.validarFuncionario(cpf, senha);
 	}
 
-	// Itens---------------------------------------------------------------------------------------------------------------------------------------------------
-
+	
 	public void cadastrar(Item item) throws ItemNuloException {
 		itens.cadastrar(item);
 	}
@@ -171,7 +166,7 @@ public class Fachada {
 		return itens.consultar(id);
 	}
 
-	// Livros--------------------------------------------------------------------------------------------------------------------------------------------------
+	
 
 	public void cadastrar(Livro livro) throws LivroJaExisteException, LivroNuloException {
 		livros.cadastrar(livro);

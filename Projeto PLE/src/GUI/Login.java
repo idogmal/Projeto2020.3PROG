@@ -7,8 +7,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import Entidades.Funcionario;
 import Facade.Fachada;
+import Entidades.Funcionario;
 import Facade.exception.aluno.CpfJaExisteException;
 import Facade.exception.funcionario.FuncionarioNaoEncontradoException;
 import Facade.exception.funcionario.FuncionarioNuloException;
@@ -23,6 +23,7 @@ import javax.swing.ImageIcon;
 import java.awt.Color;
 import java.awt.Window.Type;
 import javax.swing.JPasswordField;
+import java.awt.Font;
 
 public class Login extends JFrame {
 
@@ -123,8 +124,22 @@ public class Login extends JFrame {
 		
 		JLabel lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\Aluno\\Pictures\\Biblioteca.png"));
-		lblNewLabel_1.setBounds(51, 11, 340, 236);
+		lblNewLabel_1.setBounds(51, 10, 340, 236);
 		contentPane.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("Nicolibrary");
+		lblNewLabel_2.setFont(new Font("Franklin Gothic Demi Cond", Font.PLAIN, 17));
+		lblNewLabel_2.setBounds(180, 22, 158, 13);
+		contentPane.add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_3 = new JLabel("por");
+		lblNewLabel_3.setBounds(207, 48, 46, 13);
+		contentPane.add(lblNewLabel_3);
+		
+		JLabel lblNewLabel_4 = new JLabel("Nicolas Labs");
+		lblNewLabel_4.setFont(new Font("Century Schoolbook", Font.PLAIN, 15));
+		lblNewLabel_4.setBounds(171, 71, 116, 13);
+		contentPane.add(lblNewLabel_4);
 		
 	}
 }
