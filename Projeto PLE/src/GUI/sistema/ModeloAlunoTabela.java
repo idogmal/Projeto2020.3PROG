@@ -10,7 +10,7 @@ import Entidades.Livro;
 
 public class ModeloAlunoTabela extends AbstractTableModel{
 			
-			//TABELA PARA CLIENTE VISUALIZAR EXERCICIOS
+			//TABELA PARA CLIENTE VISUALIZAR EXERCICIOS///
 					private ArrayList<Aluno> dataList = new ArrayList<Aluno>();
 					private String[] columns={"Nome", "Cpf"};
 					Class[] columnTypes = new Class[] { Object.class, Object.class};
